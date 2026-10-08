@@ -16,7 +16,7 @@ mysql = MySQL(app)
 # Home Page
 @app.route('/')
 def home():
-    return "Database Connected Successfully!"
+    return redirect('register')
 
 # Register Page
 @app.route('/register', methods=['GET', 'POST'])
