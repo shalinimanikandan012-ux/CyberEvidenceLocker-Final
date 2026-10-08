@@ -86,23 +86,11 @@ def login():
 # Dashboard
 @app.route('/dashboard')
 def dashboard():
-
-    cur = mysql.connection.cursor()
-
-    cur.execute("SELECT COUNT(*) FROM users")
-    users = cur.fetchone()[0]
-
-    cur.execute("SELECT COUNT(*) FROM evidence")
-    evidence = cur.fetchone()[0]
-
-    cur.close()
-
     return render_template(
         'dashboard.html',
-        users=users,
-        evidence=evidence
+        users=10,
+        evidence=5
     )
-
 
 # Upload Evidence
 @app.route('/upload', methods=['GET', 'POST'])
